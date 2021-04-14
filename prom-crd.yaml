@@ -1,0 +1,78 @@
+apiVersion: v1
+items:
+- apiVersion: monitoring.coreos.com/v1
+  kind: Prometheus
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"monitoring.coreos.com/v1","kind":"Prometheus","metadata":{"annotations":{},"labels":{"app":"kube-prometheus-stack-prometheus","app.kubernetes.io/instance":"monitor","chart":"kube-prometheus-stack-13.2.1","heritage":"Helm","release":"monitor"},"name":"monitor-kube-prometheus-st-prometheus","namespace":"monitoring"},"spec":{"alerting":{"alertmanagers":[{"apiVersion":"v2","name":"monitor-kube-prometheus-st-alertmanager","namespace":"monitoring","pathPrefix":"/","port":"web"}]},"enableAdminAPI":false,"externalUrl":"http://prometheus.cw.wlake.lan/","image":"registry:5005/quay.io/prometheus/prometheus:v2.24.0","listenLocal":false,"logFormat":"logfmt","logLevel":"info","paused":false,"podMonitorNamespaceSelector":{},"podMonitorSelector":{"matchLabels":{"release":"monitor"}},"portName":"web","probeNamespaceSelector":{},"probeSelector":{"matchLabels":{"release":"monitor"}},"replicas":1,"retention":"14d","routePrefix":"/","ruleNamespaceSelector":{},"ruleSelector":{"matchLabels":{"app":"kube-prometheus-stack","release":"monitor"}},"securityContext":{"fsGroup":2000,"runAsGroup":2000,"runAsNonRoot":true,"runAsUser":1000},"serviceAccountName":"monitor-kube-prometheus-st-prometheus","serviceMonitorNamespaceSelector":{},"serviceMonitorSelector":{"matchLabels":{"release":"monitor"}},"shards":1,"storage":{"volumeClaimTemplate":{"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"300Gi"}},"storageClassName":"cinder"}}},"version":"v2.24.0"}}
+    creationTimestamp: "2021-04-08T19:09:43Z"
+    generation: 1
+    labels:
+      app: kube-prometheus-stack-prometheus
+      app.kubernetes.io/instance: monitor
+      chart: kube-prometheus-stack-13.2.1
+      heritage: Helm
+      release: monitor
+    name: monitor-kube-prometheus-st-prometheus
+    namespace: monitoring
+    resourceVersion: "8533701"
+    selfLink: /apis/monitoring.coreos.com/v1/namespaces/monitoring/prometheuses/monitor-kube-prometheus-st-prometheus
+    uid: 22d292ce-0048-42d3-a3c8-d9c4c4e43b4a
+  spec:
+    alerting:
+      alertmanagers:
+      - apiVersion: v2
+        name: monitor-kube-prometheus-st-alertmanager
+        namespace: monitoring
+        pathPrefix: /
+        port: web
+    enableAdminAPI: false
+    externalUrl: http://prometheus.cw.wlake.lan/
+    image: registry:5005/quay.io/prometheus/prometheus:v2.24.0
+    listenLocal: false
+    logFormat: logfmt
+    logLevel: info
+    paused: false
+    podMonitorNamespaceSelector: {}
+    podMonitorSelector:
+      matchLabels:
+        release: monitor
+    portName: web
+    probeNamespaceSelector: {}
+    probeSelector:
+      matchLabels:
+        release: monitor
+    replicas: 1
+    retention: 14d
+    routePrefix: /
+    ruleNamespaceSelector: {}
+    ruleSelector:
+      matchLabels:
+        app: kube-prometheus-stack
+        release: monitor
+    securityContext:
+      fsGroup: 2000
+      runAsGroup: 2000
+      runAsNonRoot: true
+      runAsUser: 1000
+    serviceAccountName: monitor-kube-prometheus-st-prometheus
+    serviceMonitorNamespaceSelector: {}
+    serviceMonitorSelector:
+      matchLabels:
+        release: monitor
+    shards: 1
+    storage:
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+          - ReadWriteOnce
+          resources:
+            requests:
+              storage: 300Gi
+          storageClassName: cinder
+    version: v2.24.0
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
