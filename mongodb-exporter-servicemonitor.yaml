@@ -1,0 +1,31 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"monitoring.coreos.com/v1","kind":"ServiceMonitor","metadata":{"annotations":{},"labels":{"app.kubernetes.io/instance":"monitor-mongodb","app.kubernetes.io/managed-by":"Helm","app.kubernetes.io/name":"prometheus-mongodb-exporter","helm.sh/chart":"prometheus-mongodb-exporter-2.8.1","release":"monitor"},"name":"monitor-mongodb-prometheus-mongodb-exporter","namespace":"monitoring"},"spec":{"endpoints":[{"interval":"30s","port":"metrics","scrapeTimeout":"10s"}],"namespaceSelector":{"matchNames":["monitoring"]},"selector":{"matchLabels":{"app.kubernetes.io/instance":"monitor-mongodb","app.kubernetes.io/name":"prometheus-mongodb-exporter"}}}}
+  creationTimestamp: "2021-04-14T19:15:54Z"
+  generation: 1
+  labels:
+    app.kubernetes.io/instance: monitor-mongodb
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: prometheus-mongodb-exporter
+    helm.sh/chart: prometheus-mongodb-exporter-2.8.1
+    release: monitor
+  name: monitor-mongodb-prometheus-mongodb-exporter
+  namespace: monitoring
+  resourceVersion: "10498225"
+  selfLink: /apis/monitoring.coreos.com/v1/namespaces/monitoring/servicemonitors/monitor-mongodb-prometheus-mongodb-exporter
+  uid: 17229142-8b4c-4ece-bfd7-b96d163bda13
+spec:
+  endpoints:
+  - interval: 30s
+    port: metrics
+    scrapeTimeout: 10s
+  namespaceSelector:
+    matchNames:
+    - monitoring
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: monitor-mongodb
+      app.kubernetes.io/name: prometheus-mongodb-exporter
